@@ -1,16 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 OrderType = {'BetUp': '0', "BetDown": '1'}
-proxies = {
-	'https' :'23.250.74.243:3199',
-	'http' :'23.250.74.243:3199' 
-}
+proxies = {}
 
 
 s = requests.Session()
-
-data = {'email':'christopher.lambert106@gmail.com',
-'password':'T0HpFToE4H05'}
+email = raw_input("Input Email: ")
+password = raw_input('Input Password: ')
+data = {'email': email,
+'password': password}
 
 url = "https://btc-e.com/ajax/login"
 r = s.post(url, data=data, proxies=proxies)
